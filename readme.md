@@ -1,8 +1,8 @@
 **Q: What is this?**
 
-**A: The specifications for the overall program. The recipe****.**
+**A: The specifications for the overall program. The recipe.**
 
-**Overall Blueprint**** :**
+# **Overall Blueprint:**
 
 _This is a very general overall outline of what needs to be done._
 
@@ -18,7 +18,7 @@ Python: Run Flask server, create API that allows access to AI results and host w
 
 Javascript and HTML: Retrieve AI results and visually show the results.
 
-**More detailed, specific instructions:**
+# **More detailed, specific instructions:**
 
 Each of the steps below many require data from the previous step. If that&#39;s the case then just use fake data until the real data works.
 
@@ -26,7 +26,7 @@ The steps below, as you will see, are purposefully designed to take data frames 
 
 
 
-**Data Collection**** :**
+# **Data Collection:**
 
 Find stock market data since 1980s or 1990s (CSV, API, whatever) for the big Indexes (Dow Jones, and S&amp;P 500). Daily data would be the best. Daily would be the one we use for this project but hourly can be something we use later.
 
@@ -68,7 +68,7 @@ In addition to the raw data, there should also be moving averages and historical
 
 This would be appended/merged to the first.
 
-**Data Scaling**** :**
+# **Data Scaling:**
 
 This data must then be compressed into a format that the neural network can process. This means all data should be turned into some number between 0 to 1.
 
@@ -98,7 +98,7 @@ Create Jupyter notebook code or python code that can:
 
 
 
-**Generating training data**** :**
+# **Generating training data:**
 
 Random ramblings:
 
@@ -114,12 +114,11 @@ Python/Jupyter Notebook: Create a function that that will take a dataframe of un
 
 If the future date&#39;s price is higher, then the row in the new column should be 1.
 
-Caution: 11 days away may not exist due to the market closed on weekends. In that case, just look up the next available day. Or just count current index + 11. When that data no longer exists because you&#39;re at the 10
+Caution: 11 days away may not exist due to the market closed on weekends. In that case, just look up the next available day. Or just count current index + 11. 
 
-# th
- date from the last day available in the data frame, just stop and splice off/throw away the rest of the data (the last 10 days).
+When that data no longer exists because you&#39;re at the 10th date from the last day available in the data frame, just stop and splice off/throw away the rest of the data (the last 10 days).
 
-**The Neural Net:**
+# **The Neural Net:**
 
 The AI NN will be a standard feed forward NN that will be fed data from the previous task.
 
@@ -143,15 +142,20 @@ See example below:
 
 =0000
 
+
+
 =00+
 
 =00+
+
+
 
 =000+
 
 =000+
 
 =000
+
 
 The AI will output its answer. Take this array/series data and add it to the last row of **of the original data** , the one that&#39;s unscaled. Map everything in this last column into &quot;buy&quot; and &quot;sell&quot; as replacements for 1 and 0 respectively.
 
@@ -163,7 +167,7 @@ Append a new column to the column to represent the AI&#39;s ID. And we do this b
 
 Even better, if there&#39;s enough time towards the end of the class, we should create new training data and scaled data where the AI looks at 31 days of data instead of 11 or only yesterday&#39;s data.
 
-**Front end:**
+# **Front end:**
 
 Create the standard file structure of flask. (app.py, static/js/css folders, basic template for routes)
 
