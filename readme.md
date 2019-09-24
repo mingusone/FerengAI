@@ -20,7 +20,7 @@ Javascript and HTML: Retrieve AI results and visually show the results.
 
 # **More detailed, specific instructions:**
 
-Each of the steps below many require data from the previous step. If that&#39;s the case then just use fake data until the real data works.
+Each of the steps below may require data from the previous step. If that&#39;s the case then just use fake data until the real data works.
 
 The steps below, as you will see, are purposefully designed to take data frames of arbitrary column length. Each of the parts should be able to work with any amount of columns with the exception of the first column being the date and the last column being the training data (to be added in a later step).
 
@@ -88,7 +88,7 @@ _What to do:_
 
 Create Jupyter notebook code or python code that can:
 
-1 )Grab the data from SQLite and put it into a dataframe.
+1) Grab the data from SQLite and put it into a dataframe.
 
 2) Create a function in python that can take a data frame of unknown columns and process all the columns in some way. Except the first column which will be the date, all other columns should already be in numerical/float format.
 
@@ -126,38 +126,6 @@ The AI NN will be a standard feed forward NN that will be fed data from the prev
 
 The neural net will be automatically scaling. The width, height, and depth (total number of layers), will be equal to the number of inputs/features available (which is the length of the number of columns available minus two because the first row is the date, the last row is the testing data column)
 
-See example below:
----
-
-= is an input cell
-
-0 is a feed forward cell
-
-+ is an output cell
----
-A neural net with 4 inputs:
-=0000
-
-=0000+
-
-=0000+
-
-=0000
----
-2 inputs:
-
-=00+
-
-=00+
----
-3 inputs:
-
-=000+
-
-=000+
-
-=000
----
 
 The AI will output its answer. Take this array/series data and add it to the last row of **of the original data** , the one that&#39;s unscaled. Map everything in this last column into &quot;buy&quot; and &quot;sell&quot; as replacements for 1 and 0 respectively.
 
