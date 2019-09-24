@@ -2,6 +2,8 @@
 
 **A: The specifications for the overall program. The recipe.**
 
+**To keep things clean, there are folders for your Jupyter Notebook files, the SQLite files, and the resources files**
+
 # **Overall Blueprint:**
 
 _This is a very general overall outline of what needs to be done._
