@@ -127,13 +127,15 @@ The AI NN will be a standard feed forward NN that will be fed data from the prev
 The neural net will be automatically scaling. The width, height, and depth (total number of layers), will be equal to the number of inputs/features available (which is the length of the number of columns available minus two because the first row is the date, the last row is the testing data column)
 
 See example below:
+---
 
 = is an input cell
 
 0 is a feed forward cell
 
 + is an output cell
-
+---
+A neural net with 4 inputs:
 =0000
 
 =0000+
@@ -141,21 +143,21 @@ See example below:
 =0000+
 
 =0000
-
-
-
-=00+
+---
+2 inputs:
 
 =00+
 
-
+=00+
+---
+3 inputs:
 
 =000+
 
 =000+
 
 =000
-
+---
 
 The AI will output its answer. Take this array/series data and add it to the last row of **of the original data** , the one that&#39;s unscaled. Map everything in this last column into &quot;buy&quot; and &quot;sell&quot; as replacements for 1 and 0 respectively.
 
