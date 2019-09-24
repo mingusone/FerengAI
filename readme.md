@@ -22,9 +22,11 @@ Javascript and HTML: Retrieve AI results and visually show the results.
 
 # **More detailed, specific instructions:**
 
-Each of the steps below may require data from the previous step. If that&#39;s the case then just use fake data until the real data works.
+Each of the steps below may require data from the previous step. If that&#39;s the case then just use fake data until the real data is available.
 
 The steps below, as you will see, are purposefully designed to take data frames of arbitrary column length. Each of the parts should be able to work with any amount of columns with the exception of the first column being the date and the last column being the training data (to be added in a later step).
+
+This will give us the flexibility of simply changing the data to whatever we want, have it be automatically scaled, and then used to train the AI. 
 
 
 
@@ -84,7 +86,7 @@ Min price from 365d range: 50
 
 Our **scaled price data** : 0.5
 
-_Optional but highly recommended_: To account for outliers, do not accept data that exceeds 3 standard deviations of the 365d data set.
+_Outliers_: To account for outliers, data that exceeds 3 standard deviations of the 365d data set should just be set to 1 or 0. 
 
 _What to do:_
 
@@ -102,7 +104,7 @@ Create Jupyter notebook code or python code that can:
 
 # **Generating training data:**
 
-Random ramblings:
+Considerations for RNN and future TODOs:
 
 _IF NO RNN: Once the data has been cleaned and scaled, it&#39;s time to generate training data. We will need to decide what is the &quot;range&quot; of data we will want the AI to consider. Should the AI look at what happened the last day, last week or last month?_
 
