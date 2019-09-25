@@ -2,13 +2,13 @@
 
 **A: The specifications for the overall program. The recipe.**
 
-**To keep things clean, there are folders for your Jupyter Notebook files, the SQLite files, and the resources files**
+**To keep things clean, there are folders for your Jupyter Notebook files and the resources files**
 
 # **Overall Blueprint:**
 
 _This is a very general overall outline of what needs to be done._
 
-Python: Grab data from APIs, clean data, store it into SQL.  The DB should be hosted but if not, SQLite works too.
+Python: Grab data from APIs, clean data, store it into MongoDB. 
 
 Python/Pandas: Rescale the data.
 
@@ -66,7 +66,7 @@ If you can't get the other stuff, that's fine, but every single dataframe must b
 
 Clean the data put it into, make sure they&#39;re all in numbers/float format. Replace all weird data like &quot;NaN&quot; or &quot;N/A&quot; or whatever, with 0 or figure out a good way to change it into a number that's a good representation of what it's about.
 
-Store this data into SQLite.
+Store this data into Mongodb.
 
 
 # **Data Scaling:**
@@ -89,13 +89,13 @@ _What to do:_
 
 Create Jupyter notebook or python code that can:
 
-1) Grab the scraped data from SQLite and put it into a dataframe.
+1) Grab the scraped data from MongoDB and put it into a dataframe.
 
 2) Create a function in python that can take a data frame of unknown columns and process all the columns. The first column which will be the date, all other columns should already be in numerical/float format.
 
 3) Scale the data by taking the min and max of data 365 days before the row being processed.
 
-4) Saved the scaled data into the SQLite database.
+4) Saved the scaled data into the MongoDB database.
 
 
 
