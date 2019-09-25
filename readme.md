@@ -52,25 +52,22 @@ Div yield 1.46%
 
 
 
-| Date | Open | High | Low | MktCap | P/E Ratio | Div Yield | Daily Volume |
+| Date | Price(or closing price) | High | Low | MktCap | P/E Ratio | Div Yield | Daily Volume |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01/01/2001 | 78 | 90 | 20 | 9393 | 32 | 2 | 100000 |
 
 In the pandas, each row should look something like this, above.
 
-Clean the data put it into, make sure they&#39;re all in numbers/float format. Replace all weird data like &quot;NaN&quot; or &quot;N/A&quot; or whatever, with 0.
+If you can't get the other stuff, that's fine, but every single dataframe must be at least:
+
+| Date | Price |
+| --- | --- |
+| 01/01/2001 | 100 |
+
+Clean the data put it into, make sure they&#39;re all in numbers/float format. Replace all weird data like &quot;NaN&quot; or &quot;N/A&quot; or whatever, with 0 or figure out a good way to change it into a number that's a good representation of what it's about.
 
 Store this data into SQLite.
 
-
-
-In addition to the raw data, there should also be moving averages and historical data for data from 11 days ago.
-
-| Yesterday&#39;s price | 3-Days ago | 5-Days ago | 7-Days ago | 9-days ago | 11-days ago |
-| --- | --- | --- | --- | --- | --- |
-| 50 | 32 | 63 | 83 | 29 | 50 |
-
-This would be appended/merged to the first.
 
 # **Data Scaling:**
 
@@ -90,37 +87,51 @@ _Outliers_: To account for outliers, data that exceeds 3 standard deviations of 
 
 _What to do:_
 
-Create Jupyter notebook code or python code that can:
+Create Jupyter notebook or python code that can:
 
-1) Grab the data from SQLite and put it into a dataframe.
+1) Grab the scraped data from SQLite and put it into a dataframe.
 
-2) Create a function in python that can take a data frame of unknown columns and process all the columns in some way. Except the first column which will be the date, all other columns should already be in numerical/float format.
+2) Create a function in python that can take a data frame of unknown columns and process all the columns. The first column which will be the date, all other columns should already be in numerical/float format.
 
-3) Scale the data by taking the min and max of data 365 days before the row being processed. See above for example.
+3) Scale the data by taking the min and max of data 365 days before the row being processed.
 
 4) Saved the scaled data into the SQLite database.
 
 
 
+
 # **Generating training data:**
 
-Considerations for RNN and future TODOs:
+Considerations for RNN and future TODOs (skip if not interested, not a do-able requirement for this project):
 
 _IF NO RNN: Once the data has been cleaned and scaled, it&#39;s time to generate training data. We will need to decide what is the &quot;range&quot; of data we will want the AI to consider. Should the AI look at what happened the last day, last week or last month?_
 
 _This must be decided on how much time we&#39;re giving the AI to think. The idea is &quot;Would it be a good idea to buy or sell right now if the next opportunity we have to buy or sell will be a day, week, or month from now?&quot;_
 
-_For this project, we will just start with 11 day range. In the future, we may have separate AI&#39;s that use 1 month data, 1 day data, 1 year data, etc._
+_For this project, we will just start with 14 day range. In the future, we may have separate AI&#39;s that use 1 month data, 1 day data, 1 year data, etc._
 
 **Instructions:**
 
-Python/Jupyter Notebook: Create a function that that will take a dataframe of unknown columns and size, and add a new column to it. The new column will look at the closing price of that day, and compare it to the closing price of a date 11 days in the future.
+## Part 1:
+Create a function that takes 2 parameters: a dataframe and a number.
+The number represents how many days ahead to look. 
+The function will take in the data frame, and append X columns to it (based on the number) with the data from each of the previous day being added.
+
+| Date | Price | 1 Day Ago | 2 Day Ago | 3 Day Ago | 4 Day Ago |
+| --- | --- | --- | --- | --- | --- |
+| 01/01/2001 | 100 | 25 | 75 | 22 | 55 |
+
+
+
+## Part 2:
+
+Create another function that that will take a dataframe of unknown columns and size, and add a new column to it. The new column will look at the closing price of that day, and compare it to the closing price of a date 14 days in the future.
 
 If the future date&#39;s price is higher, then the row in the new column should be 1.
 
-Caution: 11 days away may not exist due to the market closed on weekends. In that case, just look up the next available day. Or just count current index + 11. 
+Caution: 14 days away may not exist due to the market closed on weekends. In that case, just look up the next available day. Or just count current index + 14. 
 
-When that data no longer exists because you&#39;re at the 10th date from the last day available in the data frame, just stop and splice off/throw away the rest of the data (the last 10 days).
+When that data no longer exists because you&#39;re at the 13th date from the last day available in the data frame, just stop and splice off/throw away the rest of the data (the last 13 days).
 
 # **The Neural Net:**
 
@@ -139,7 +150,7 @@ Append a new column to the column to represent the AI&#39;s ID. And we do this b
 
 **TODO:** figure out someway to add a description to each AI&#39;s ID. Maybe a new table with two rows: AI ID, and a description of the type of data the AI was looking at, a description of its NN architecture.
 
-Even better, if there&#39;s enough time towards the end of the class, we should create new training data and scaled data where the AI looks at 31 days of data instead of 11 or only yesterday&#39;s data.
+Even better, if there&#39;s enough time towards the end of the class, we should create new training data and scaled data where the AI looks at 31 days of data instead of 14 or only yesterday&#39;s data.
 
 # **Front end:**
 
