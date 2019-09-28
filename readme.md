@@ -169,7 +169,13 @@ Even better, if there&#39;s enough time towards the end of the class, we should 
 
 Create the standard file structure of flask. (app.py, static/js/css folders, basic template for routes)
 
-Create the API routes that will be able to return the data from the server as JSON.
+Create the API routes that will be able to return the data from the server as JSON:
+
+For example:
+
+FerengAI.com/<ai_id>/
+
+should return all the dates and decision the AI made, what stock the AI was trained on, what stock the AI was applied to. 
 
 Things to show on the website (fee free to get creative here):
 
