@@ -68,6 +68,11 @@ Clean the data put it into, make sure they&#39;re all in numbers/float format. R
 
 Store this data into Mongodb.
 
+The data should be stored in the database named FerengAI.
+The collection should be named companyname_cleaned
+
+For example, if you've cleaned Google's data, it should be saved to collection **google_cleaned**
+
 
 # **Data Scaling:**
 
@@ -98,7 +103,10 @@ Create Jupyter notebook or python code that can:
 4) Saved the scaled data into the MongoDB database.
 
 
+The data should be stored in the database named FerengAI.
+The collection should be named companyname_scaled
 
+For example, if you've scaled Google's data, it should be saved to collection **google_scaled**
 
 # **Generating training data:**
 
@@ -132,6 +140,11 @@ If the future date&#39;s price is higher, then the row in the new column should 
 Caution: 14 days away may not exist due to the market closed on weekends. In that case, just look up the next available day. Or just count current index + 14. 
 
 When that data no longer exists because you&#39;re at the 13th date from the last day available in the data frame, just stop and splice off/throw away the rest of the data (the last 13 days).
+
+The data should be stored in the database named FerengAI.
+The collection should be named companyname_scaled
+
+For example, if you've cleaned Google's data, it should be saved to collection **google_scaled**
 
 # **The Neural Net:**
 
