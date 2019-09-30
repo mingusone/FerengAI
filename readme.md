@@ -68,10 +68,10 @@ Clean the data put it into, make sure they&#39;re all in numbers/float format. R
 
 Store this data into Mongodb.
 
-The data should be stored in the database named FerengAI.
-The collection should be named companyname_cleaned
+The data should be stored in the database named the company's name.
+The collection should be named cleaned.
 
-For example, if you've cleaned Google's data, it should be saved to collection **google_cleaned**
+For example, if you've cleaned Google's data, it should be saved to a databased called **google** and a collection named **cleaned**
 
 
 # **Data Scaling:**
@@ -103,10 +103,12 @@ Create Jupyter notebook or python code that can:
 4) Saved the scaled data into the MongoDB database.
 
 
-The data should be stored in the database named FerengAI.
-The collection should be named companyname_scaled
+Store this data into Mongodb.
 
-For example, if you've scaled Google's data, it should be saved to collection **google_scaled**
+The data should be stored in the database named the company's name.
+The collection should be named cleaned.
+
+For example, if you've cleaned Google's data, it should be saved to a databased called **google** and a collection named **scaled**
 
 # **Generating training data:**
 
@@ -141,10 +143,12 @@ Caution: 14 days away may not exist due to the market closed on weekends. In tha
 
 When that data no longer exists because you&#39;re at the 13th date from the last day available in the data frame, just stop and splice off/throw away the rest of the data (the last 13 days).
 
-The data should be stored in the database named FerengAI.
-The collection should be named companyname_scaled
+Store this data into Mongodb.
 
-For example, if you've cleaned Google's data, it should be saved to collection **google_scaled**
+The data should be stored in the database named the company's name.
+The collection should be named cleaned.
+
+For example, if you've cleaned Google's data, it should be saved to a databased called **google** and a collection named **train**
 
 # **The Neural Net:**
 
@@ -169,18 +173,6 @@ Even better, if there&#39;s enough time towards the end of the class, we should 
 
 Create the standard file structure of flask. (app.py, static/js/css folders, basic template for routes)
 
-Create the API routes that will be able to return the data from the server as JSON:
+Create an index "/" route that has a dragdown list of all of the AIs.
 
-For example:
-
-FerengAI.com/<ai_id>/
-
-should return all the dates and decision the AI made, what stock the AI was trained on, what stock the AI was applied to. 
-
-Things to show on the website (fee free to get creative here):
-
-What was the average % gains or loss by the AI?
-
-How much money would you end up with if you have given an AI $10,000 since 1980?
-
-Show the performance differences between each AI in some kind of visual comparison.
+Create a route that would take in something like FerengAI.com/<ai_id>/ and return a JSON that has the AI's ID, AI's Description, what stock the AI was trained on, what stock the AI was applied to, and an array of all the dates and decision the AI made.
