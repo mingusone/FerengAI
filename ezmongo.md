@@ -20,4 +20,5 @@ ezmongo.set_data(my_df, 'MSFT', 'train')
 ```
 
 It's basically:
+
 ezmongo.set_data(  the_dataframe  ,  name_of_the_company  ,  type_of_data_in_the_dataframe  )
