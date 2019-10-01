@@ -1,5 +1,7 @@
 # EZmongo.
-Because I got sick of having to write the same lines of code over and over
+Because I got sick of having to write the same lines of code over and over.
+
+Use this in your JupyterNotebook file inside the folder "jupyter" or you can copy and paste that file "ezmongo.py" elsewhere and use it there.
 
 ## How to get data from our mongoDB
 ```
