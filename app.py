@@ -13,9 +13,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/api/ai/<company>")
-def ai_get(company):
-		return ezmongo.get_data(company, 'AI').to_json(orient='records')
+@app.route("/api/ai/<company>/<ai_id>")
+def ai_get(company, ai_id):
+		return ezmongo.get_data(company, ai_id).to_json(orient='records')
 
 @app.route("/api/stock/<company>")
 def company_get(company):
