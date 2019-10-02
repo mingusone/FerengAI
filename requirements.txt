@@ -20,3 +20,4 @@ pytz==2019.2
 six==1.12.0
 Werkzeug==0.15.5
 wincertstore==0.2
+dnspython==1.16.0
