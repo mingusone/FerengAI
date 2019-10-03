@@ -13,6 +13,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/api")
+def api_base():
+    return render_template("api.html")
+
 @app.route("/api/ai/<company>/<ai_id>")
 def ai_get(company, ai_id):
 		return ezmongo.get_data(company, ai_id).to_json(orient='records')
