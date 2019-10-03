@@ -13,6 +13,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/nn")
+def nngraph():
+    return render_template("NNgraph.html")
+
 @app.route("/api")
 def api_base():
     return render_template("api.html")
