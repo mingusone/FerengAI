@@ -13,9 +13,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/api")
-def api_base():
-    return render_template("api.html")
+@app.route("/nn")
+def nn():
+    return render_template("nn.html")
 
 @app.route("/api/ai/<company>/<ai_id>")
 def ai_get(company, ai_id):
