@@ -14,12 +14,8 @@ def index():
     return render_template("index.html")
 
 @app.route("/nn")
-def nngraph():
-    return render_template("NNgraph.html")
-
-@app.route("/api")
-def api_base():
-    return render_template("api.html")
+def nn():
+    return render_template("nn.html")
 
 @app.route("/api/ai/<company>/<ai_id>")
 def ai_get(company, ai_id):
