@@ -29,11 +29,11 @@ def predictreg():
 def nn():
     return render_template("nn.html")
 
-@app.route("/api/ai/<company>/<ai_id>")
+@app.route("/api/<company>/<ai_id>")
 def ai_get(company, ai_id):
 		return ezmongo.get_data(company, ai_id).to_json(orient='records')
 
-@app.route("/api/stock/<company>")
+@app.route("/api/<company>")
 def company_get(company):
 		return ezmongo.get_data(company,'cleaned').to_json(orient="records")
 
