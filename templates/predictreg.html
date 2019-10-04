@@ -11,23 +11,9 @@
       <div class ="container-fluid">
           <h1>The Neural Net</h1>
 
-          <p>
-            Neural net was trained on Microsoft stock data from 1986 to 2019.
-            <br>
-            Neural Net Hyperparameters:
-            <br>
-            Inputs/Features:
-            <br>
-            30 Day past closing data + Adj Close + Close + High +Low + Open +Volume 
-            <br>
-            Number of Layers = 25
-            <br>
-            Number of Neurons per layer = 20
-            <br>
-            Training Data: 1986-04-07 to 2002-03-04
-            <br>
-            Testing Data: 2002-03-11 to 2019-08-14
-          </p>    
+          {% include 'components/nnTable.html' %}
+
+          <p>Graph of Testing Results:</p>
 
           {% include 'components/nn.html' %}
       </div>

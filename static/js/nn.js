@@ -1,4 +1,4 @@
-d3.json('api/ai/MSFT/AI').then(function(data) {
+d3.json('api/MSFT/AI').then(function(data) {
 
 	data = data.sort(function(a, b){return a['Date']-b['Date']});
 
