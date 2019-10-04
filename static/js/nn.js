@@ -13,11 +13,6 @@ d3.json('api/ai/MSFT/AI').then(function(data) {
   	return column
   })
 
-  let graph_price = data.map(function(x){
-  	let column = (x['Close']*200);
-  	return column
-  })
-
   let AIchoice = data.map(function(x){
   	let column = new Date(x['AIchoice']);
   	return column
@@ -81,14 +76,21 @@ d3.json('api/ai/MSFT/AI').then(function(data) {
 
   };
 
+  //And what if it was only hodl?
+  let hodl_shares = 10000 / price[0]
+  let hodl = price.map(function(x){
+      value = x*hodl_shares
+    return value
+  })
+
 
 
 	var trace1 = {
 		mode: 'lines',
   	type: 'scatter',
 	  x: dates,
-	  y: graph_price,
-	  name: 'Stock Price x200'
+	  y: price,
+	  name: 'Stock Price'
 	};
 
 	var trace2 = {
@@ -96,7 +98,7 @@ d3.json('api/ai/MSFT/AI').then(function(data) {
   	type: 'scatter',
 	  x: dates,
 	  y: AIbank,
-	  name: 'AI total value'
+	  name: 'SkAInet'
 	};
 
 	var trace3 = {
@@ -104,10 +106,18 @@ d3.json('api/ai/MSFT/AI').then(function(data) {
   	type: 'scatter',
 	  x: dates,
 	  y: Pbank,
-	  name: 'Prophet total value'
+	  name: '1-Day Prophet'
 	};
 
-	var data = [trace1, trace2, trace3];
+  var trace4 = {
+    mode: 'lines',
+    type: 'scatter',
+    x: dates,
+    y: hodl,
+    name: 'HODL'
+  };
+
+	var data = [trace1, trace2, trace3, trace4];
 
 	Plotly.newPlot('graph', data);
 

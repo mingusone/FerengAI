@@ -1,73 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>FerengAI</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
-  <!-- Leaflet CSS & JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-  crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-  crossorigin=""></script>
-
-  <!-- Google Charts -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <!--D3 cdn-->
-  <script src="https://d3js.org/d3.v5.js"></script>
-
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-</head>
+{% include 'components/head.html' %}
 
 <body>
-<!-- The sidebar -->
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
-<body>
+  {% include 'components/sidenav.html' %}
 
-<div class="sidenav">
-        <a href="/">Final Project</a>
-        <a href="data">Data</a>
-        <a href="linealreg">Linear Regression</a>
-        <a href="predictreg">Prediction Results</a>
-</div>
+  <div class="main">
+      <div class ="container-fluid">
+          <h1>The Neural Net</h1>
 
-<div class="main">
-    <div class ="container-fluid">
-        <div>
-            <img src="../static/images/linealreg.jpg" class="img-fluid float-right" alt="Responsive image">
-        </div>
-        <h1>The Neural Net</h1>
-    </div>
+          <p>
+            Neural net was trained on Microsoft stock data from 1986 to 2019.
+            <br>
+            Neural Net Hyperparameters:
+            <br>
+            Inputs/Features:
+            <br>
+            30 Day past closing data + Adj Close + Close + High +Low + Open +Volume 
+            <br>
+            Number of Layers = 25
+            <br>
+            Number of Neurons per layer = 20
+            <br>
+            Training Data: 1986-04-07 to 2002-03-04
+            <br>
+            Testing Data: 2002-03-11 to 2019-08-14
+          </p>    
 
-</div>
-<div>
-    <h1> here is where the awesome plot goes </h1>
-</div>
-
-
-
+          {% include 'components/nn.html' %}
+      </div>
+  </div>
   <!-- Our JS -->
   <script type="text/javascript" src="static/js/index.js"></script>
-
 
 </body>
 </html>
