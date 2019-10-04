@@ -13,6 +13,18 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/")
+def data():
+    return render_template("data.html")
+
+@app.route("/")
+def linealreg():
+    return render_template("linealreg.html")
+
+@app.route("/")
+def predictreg():
+    return render_template("predictreg.html")
+
 @app.route("/nn")
 def nn():
     return render_template("nn.html")
