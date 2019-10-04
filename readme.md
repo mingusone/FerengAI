@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 # Machine learning
 ![neuralnetworks](https://user-images.githubusercontent.com/46768393/66180373-cd65c000-e63a-11e9-9147-d762c44718fc.jpg)
-=======
 ![datacollection](https://user-images.githubusercontent.com/46768393/66180587-92b05780-e63b-11e9-8730-56114e681a05.jpg)
-
-**Q: What is this?**
->>>>>>> ac07d0385ed7679f492d73cf785c860a27c5cdbb
 
 **A: The specifications for the overall program. The recipe.**
 
