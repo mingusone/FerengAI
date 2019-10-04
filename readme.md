@@ -1,4 +1,5 @@
-**Q: What is this?**
+# Machine learning
+![neuralnetworks](https://user-images.githubusercontent.com/46768393/66180373-cd65c000-e63a-11e9-9147-d762c44718fc.jpg)
 
 **A: The specifications for the overall program. The recipe.**
 
