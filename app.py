@@ -13,15 +13,15 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/")
+@app.route("/data")
 def data():
     return render_template("data.html")
 
-@app.route("/")
+@app.route("/linealreg")
 def linealreg():
     return render_template("linealreg.html")
 
-@app.route("/")
+@app.route("/predictreg")
 def predictreg():
     return render_template("predictreg.html")
 
