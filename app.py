@@ -17,9 +17,9 @@ def index():
 def data():
     return render_template("data.html")
 
-@app.route("/linealreg")
-def linealreg():
-    return render_template("linealreg.html")
+@app.route("/three")
+def three():
+    return render_template("three.html")
 
 @app.route("/predictreg")
 def predictreg():
@@ -28,6 +28,10 @@ def predictreg():
 @app.route("/nn")
 def nn():
     return render_template("nn.html")
+
+@app.route("/limitless")
+def limitless():
+    return render_template("limitless.html")
 
 @app.route("/api/<company>/<ai_id>")
 def ai_get(company, ai_id):
