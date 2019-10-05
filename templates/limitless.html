@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'components/head.html' %}
+
+<body>
+
+  {% include 'components/sidenav.html' %}
+
+  <div class="main">
+      <div class ="container-fluid">
+          <h1>The Infinite Prophet</h1>
+
+          <p>What would happen if you could see the future? Limited to 1 trade a day.</p>
+
+          <img src="../static/images/limitless.jpg" alt="Responsive image">
+
+          {% include 'components/limitlessGraph.html' %}
+      </div>
+  </div>
+  <!-- Our JS -->
+  <script type="text/javascript" src="static/js/limitless.js"></script>
+
+</body>
+</html>

@@ -54,25 +54,25 @@ d3.json('api/MSFT/AI').then(function(data) {
   	AIbank.push(AImoney + (AIshares*PPS));
 
   	// =====================The Prophet=====================
-  	if (curr['BuyOrSell'] == 1) {
-  		//Calculate how many shares the AI can buy
-  		let total_shares  = Pmoney / PPS
-  		let total_cost = total_shares * PPS
-  		//Change the bank
-  		Pmoney -= total_cost;
-  		Pshares += total_shares;
-  	}
-  	else {
-  		//Calculate how many shares the AI can sell
-  		let total_sale = Pshares * PPS
+  	// if (curr['BuyOrSell'] == 1) {
+  	// 	//Calculate how many shares the AI can buy
+  	// 	let total_shares  = Pmoney / PPS
+  	// 	let total_cost = total_shares * PPS
+  	// 	//Change the bank
+  	// 	Pmoney -= total_cost;
+  	// 	Pshares += total_shares;
+  	// }
+  	// else {
+  	// 	//Calculate how many shares the AI can sell
+  	// 	let total_sale = Pshares * PPS
 
-  		//Change the bank
-  		Pmoney += total_sale;
-  		Pshares = 0;
-  	}
+  	// 	//Change the bank
+  	// 	Pmoney += total_sale;
+  	// 	Pshares = 0;
+  	// }
 
-  	// AIBank is the total value of cash plus net assets
-  	Pbank.push(Pmoney + (Pshares*PPS));
+  	// // AIBank is the total value of cash plus net assets
+  	// Pbank.push(Pmoney + (Pshares*PPS));
 
   };
 
@@ -101,13 +101,13 @@ d3.json('api/MSFT/AI').then(function(data) {
 	  name: 'SkAInet'
 	};
 
-	var trace3 = {
-		mode: 'lines',
-  	type: 'scatter',
-	  x: dates,
-	  y: Pbank,
-	  name: '1-Day Prophet'
-	};
+	// var trace3 = {
+	// 	mode: 'lines',
+ //  	type: 'scatter',
+	//   x: dates,
+	//   y: Pbank,
+	//   name: '1-Day Prophet'
+	// };
 
   var trace4 = {
     mode: 'lines',
@@ -117,9 +117,9 @@ d3.json('api/MSFT/AI').then(function(data) {
     name: 'HODL'
   };
 
-	var data = [trace1, trace2, trace3, trace4];
+	var data = [trace1, trace2, trace4];
 
-	Plotly.newPlot('graph', data);
+	Plotly.newPlot('graphNN', data);
 
 
 

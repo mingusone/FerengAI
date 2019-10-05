@@ -7,33 +7,31 @@
 
 {% include 'components/sidenav.html' %}
 
-<div class="main">
-    <div class="container-fluid ">
-        <div>
-            <img src="../static/images/datacollection.jpg" class="container float-right" alt="Responsive image" 
-            background-size:cover;>
-        </div>
-        <h2>Data </h2>
-        <h4>Data Collection</h4>
-        <h5> Stock market data since 1980s or 1990s (CSV, API, whatever) for the big Indexes (Dow Jones, and S&P 500). Initially we will be using d daily data, but hourly can be something we use later.
-        </h5>
-        <h4>Data Scaling</h4>
 
-        <h5>This data must then be compressed into a format that the neural network can process. This means all data should be turned into some number between 0 to 1. For example, if we are look at data from 9/3/2015 and the price was 100, we will find the maximum and minimum price from the last 365 days to determine the range of the scale.
-        </h5>
-        <h4>Generating training data</h4>
-        <h4>Part 1</h4>
-        <h5>Create a function that takes 2 parameters: a dataframe and a number. The number represents how many days ahead to look. The function will take in the data frame, and append X columns to it (based on the number) with the data from each of the previous day being added.</h5>
-        <h4>Part 2</h4>
-        <h5>Create another function that that will take a dataframe of unknown columns and size, and add a new column to it. The new column will look at the closing price of that day, and compare it to the closing price of a date 14 days in the future.</h5>
-    </div>
+<div class="main">
+<p>Example data of Microsoft stock information</p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+            <th scope="col">Adj Close</th>
+            <th scope="col">Close</th>
+            <th scope="col">High</th>
+            <th scope="col">Low</th>
+            <th scope="col">Open</th>
+            <th scope="col">Volume</th>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+      </tbody>
+    </table>
+        
 </div>
 
 
 
 
   <!-- Our JS -->
-  <script type="text/javascript" src="static/js/index.js"></script>
+  <script type="text/javascript" src="static/js/data.js"></script>
 
 
 </body>
