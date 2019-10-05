@@ -1,0 +1,39 @@
+body {
+font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+height: 50em;
+width: 160px;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: whitesmoke;
+overflow-x: hidden;
+padding-top: 20px;
+float:left;
+}
+
+.sidenav a {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 20px;
+font-weight: normal;
+color: #818181;
+display: block;
+}
+
+.sidenav a:hover {
+color: black;
+}
+
+.main {
+margin-left: 160px; /* Same as the width of the sidenav */
+font-size: 28px; /* Increased text to enable scrolling */
+padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}

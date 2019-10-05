@@ -1,8 +1,8 @@
-**Q: What is this?**
+# Machine learning
+![neuralnetworks](https://user-images.githubusercontent.com/46768393/66180373-cd65c000-e63a-11e9-9147-d762c44718fc.jpg)
+![datacollection](https://user-images.githubusercontent.com/46768393/66180587-92b05780-e63b-11e9-8730-56114e681a05.jpg)
 
-**A: The specifications for the overall program. The recipe.**
 
-**To keep things clean, there are folders for your Jupyter Notebook files and the resources files**
 
 # **Overall Blueprint:**
 

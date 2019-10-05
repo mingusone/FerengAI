@@ -1,0 +1,15 @@
+Assuming a perfect world with infinite liquidity and infinite buyers willing to buy at closing price and infinite sellers willing to sell at closing price.
+
+In real life, volume is a problem. You can't simply dump 200 million dollars worth shares and expect it work. 
+
+Process:
+
+Clean
+
+Generate Y/Training
+
+Scale
+
+Insert
+
+Visualize!

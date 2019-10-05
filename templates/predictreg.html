@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'components/head.html' %}
+
+<body>
+
+  {% include 'components/sidenav.html' %}
+
+  <div class="main">
+      <div class ="container-fluid">
+          <h1>The Neural Net</h1>
+
+          {% include 'components/nnTable.html' %}
+
+          <p>Graph of Testing Results:</p>
+
+          {% include 'components/nn.html' %}
+      </div>
+  </div>
+  <!-- Our JS -->
+  <script type="text/javascript" src="static/js/index.js"></script>
+
+</body>
+</html>
